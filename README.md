@@ -1,1 +1,412 @@
-# electric-based-survey
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Nature Survey</title>
+
+<style>
+  body {
+    background: honeydew;
+    color: darkgreen;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .heading {
+    background: forestgreen;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .section {
+    color: forestgreen;
+    margin-top: 25px;
+  }
+
+  .question {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .question h3 {
+    margin-top: 0;
+  }
+
+  .option {
+    display: block;
+    padding: 8px 0;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    accent-color: forestgreen;
+    margin-right: 8px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid darkseagreen;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid darkseagreen;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+  }
+
+  .submit {
+    background: forestgreen;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .submit:hover {
+    background: darkgreen;
+  }
+
+  .required {
+    color: red;
+  }
+
+  .actions {
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  /* THANK YOU PAGE */
+
+  #thankyouPage {
+    display: none;
+    min-height: 85vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thankyou {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 18px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px lightgray;
+  }
+
+  .icon {
+    font-size: 60px;
+  }
+
+  .thankyou h1 {
+    color: forestgreen;
+  }
+
+  .thankyou p {
+    color: darkslategray;
+    line-height: 1.6;
+  }
+
+  .message {
+    background: honeydew;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  .back {
+    display: inline-block;
+    background: forestgreen;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- SURVEY PAGE -->
+<div id="surveyPage">
+
+<!-- HEADER -->
+<div class="heading">
+  <h1>E-WASTE SURVEY 🌿</h1>
+  <p>Help us understand e-waste awareness and behaviour.</p>
+</div>
+
+<form id="surveyForm">
+
+<!-- SECTION 1 -->
+<h2 class="section">Section 1: About You</h2>
+
+<div class="question">
+  <h3>1. Age group:</h3>
+  <label class="option"><input type="radio" name="age" value="Under 18">Under 18</label>
+  <label class="option"><input type="radio" name="age" value="18-25">18-25</label>
+  <label class="option"><input type="radio" name="age" value="26-40">26-40</label>
+  <label class="option"><input type="radio" name="age" value="41+">41+</label>
+</div>
+
+<div class="question">
+  <h3>2. What is your gender?</h3>
+  <label class="option"><input type="radio" name="gender" value="Male">Male</label>
+  <label class="option"><input type="radio" name="gender" value="Female">Female</label>
+  <label class="option"><input type="radio" name="gender" value="Other">Other</label>
+  <label class="option"><input type="radio" name="gender" value="Prefer not to say">Prefer not to say</label>
+</div>
+
+<div class="question">
+  <h3>3. Occupation:</h3>
+  <label class="option"><input type="radio" name="occupation" value="Student">Student</label>
+  <label class="option"><input type="radio" name="occupation" value="Employed">Employed</label>
+  <label class="option"><input type="radio" name="occupation" value="Self-employed">Self-employed</label>
+  <label class="option"><input type="radio" name="occupation" value="Homemaker">Homemaker</label>
+  <label class="option"><input type="radio" name="occupation" value="Other">Other</label>
+</div>
+
+<div class="question">
+  <h3>4. Which area do you live in?</h3>
+  <label class="option"><input type="radio" name="area" value="Urban">Urban</label>
+  <label class="option"><input type="radio" name="area" value="Semi-urban">Semi-urban</label>
+  <label class="option"><input type="radio" name="area" value="Rural">Rural</label>
+</div>
+
+<!-- SECTION 2 -->
+<h2 class="section">Section 2: E-waste Behaviour</h2>
+
+<div class="question">
+  <h3>5. Which old devices do you have unused at home?</h3>
+  <label class="option"><input type="checkbox" name="devices" value="Mobile phones">Mobile phones</label>
+  <label class="option"><input type="checkbox" name="devices" value="Chargers and cables">Chargers & cables</label>
+  <label class="option"><input type="checkbox" name="devices" value="Laptops">Laptops</label>
+  <label class="option"><input type="checkbox" name="devices" value="Batteries">Batteries</label>
+  <label class="option"><input type="checkbox" name="devices" value="TVs and appliances">TVs & appliances</label>
+  <label class="option"><input type="checkbox" name="devices" value="None">None</label>
+</div>
+
+<div class="question">
+  <h3>6. How do you usually dispose of old electronics? <span class="required">*</span></h3>
+  <label class="option"><input type="radio" name="disposal" value="Sell to scrap dealer" required>Sell to scrap dealer</label>
+  <label class="option"><input type="radio" name="disposal" value="Give to repair shop">Give to repair shop</label>
+  <label class="option"><input type="radio" name="disposal" value="Household garbage">Throw in household garbage</label>
+  <label class="option"><input type="radio" name="disposal" value="Authorized collection">Hand to authorized collection</label>
+  <label class="option"><input type="radio" name="disposal" value="Keep at home">Keep at home</label>
+  <label class="option"><input type="radio" name="disposal" value="Donate">Donate</label>
+</div>
+
+<div class="question">
+  <h3>7. How often do you replace your phone?</h3>
+  <label class="option"><input type="radio" name="replacement" value="Every 1-2 years">Every 1-2 years</label>
+  <label class="option"><input type="radio" name="replacement" value="3-4 years">3-4 years</label>
+  <label class="option"><input type="radio" name="replacement" value="5+ years">5+ years</label>
+  <label class="option"><input type="radio" name="replacement" value="Only when it breaks">Only when it breaks</label>
+</div>
+
+<div class="question">
+  <h3>8. Do you repair devices before replacing them?</h3>
+  <p>1 = Never, 5 = Always</p>
+  <label class="option"><input type="radio" name="repair" value="1">1 - Never</label>
+  <label class="option"><input type="radio" name="repair" value="2">2</label>
+  <label class="option"><input type="radio" name="repair" value="3">3</label>
+  <label class="option"><input type="radio" name="repair" value="4">4</label>
+  <label class="option"><input type="radio" name="repair" value="5">5 - Always</label>
+</div>
+
+<div class="question">
+  <h3>9. Before disposing of a device, do you erase your personal data?</h3>
+  <label class="option"><input type="radio" name="data" value="Always">Always</label>
+  <label class="option"><input type="radio" name="data" value="Sometimes">Sometimes</label>
+  <label class="option"><input type="radio" name="data" value="Never">Never</label>
+  <label class="option"><input type="radio" name="data" value="Not sure">Not sure</label>
+</div>
+
+<div class="question">
+  <h3>10. When did you last dispose of an electronic item?</h3>
+  <label class="option"><input type="radio" name="lastDisposal" value="Within 6 months">Within 6 months</label>
+  <label class="option"><input type="radio" name="lastDisposal" value="6-12 months">6-12 months</label>
+  <label class="option"><input type="radio" name="lastDisposal" value="Over a year ago">Over a year ago</label>
+  <label class="option"><input type="radio" name="lastDisposal" value="Never">Never</label>
+</div>
+
+<!-- SECTION 3 -->
+<h2 class="section">Section 3: Awareness</h2>
+
+<div class="question">
+  <h3>11. Have you heard of "e-waste"? <span class="required">*</span></h3>
+  <label class="option"><input type="radio" name="ewaste" value="Yes" required>Yes</label>
+  <label class="option"><input type="radio" name="ewaste" value="No">No</label>
+  <label class="option"><input type="radio" name="ewaste" value="Not sure">Not sure</label>
+</div>
+
+<div class="question">
+  <h3>12. Have you heard of "circular economy"? <span class="required">*</span></h3>
+  <label class="option"><input type="radio" name="circular" value="Yes" required>Yes</label>
+  <label class="option"><input type="radio" name="circular" value="No">No</label>
+  <label class="option"><input type="radio" name="circular" value="Not sure">Not sure</label>
+</div>
+
+<div class="question">
+  <h3>13. Which practices do you know?</h3>
+  <label class="option"><input type="checkbox" name="practices" value="Recycling">Recycling</label>
+  <label class="option"><input type="checkbox" name="practices" value="Repair and reuse">Repair & reuse</label>
+  <label class="option"><input type="checkbox" name="practices" value="Refurbishing">Refurbishing</label>
+  <label class="option"><input type="checkbox" name="practices" value="Take-back programs">Take-back programs</label>
+  <label class="option"><input type="checkbox" name="practices" value="Extended Producer Responsibility">Extended Producer Responsibility</label>
+  <label class="option"><input type="checkbox" name="practices" value="None">None</label>
+</div>
+
+<div class="question">
+  <h3>14. Do you know an authorized e-waste collection centre near you?</h3>
+  <label class="option"><input type="radio" name="centre" value="Yes">Yes</label>
+  <label class="option"><input type="radio" name="centre" value="No">No</label>
+</div>
+
+<div class="question">
+  <h3>15. Improper e-waste disposal harms health and the environment.</h3>
+  <p>1 = Strongly disagree, 5 = Strongly agree</p>
+  <label class="option"><input type="radio" name="harm" value="1">1 - Strongly disagree</label>
+  <label class="option"><input type="radio" name="harm" value="2">2</label>
+  <label class="option"><input type="radio" name="harm" value="3">3</label>
+  <label class="option"><input type="radio" name="harm" value="4">4</label>
+  <label class="option"><input type="radio" name="harm" value="5">5 - Strongly agree</label>
+</div>
+
+<div class="question">
+  <h3>16. Where did you learn about e-waste?</h3>
+  <label class="option"><input type="radio" name="learning" value="Social media">Social media</label>
+  <label class="option"><input type="radio" name="learning" value="School or college">School or college</label>
+  <label class="option"><input type="radio" name="learning" value="News">News</label>
+  <label class="option"><input type="radio" name="learning" value="Government campaigns">Government campaigns</label>
+  <label class="option"><input type="radio" name="learning" value="Family or friends">Family or friends</label>
+  <label class="option"><input type="radio" name="learning" value="Never learned">Never learned</label>
+</div>
+
+<!-- SECTION 4 -->
+<h2 class="section">Section 4: Opinion and Willingness</h2>
+
+<div class="question">
+  <h3>17. What stops you from disposing of e-waste properly?</h3>
+  <label class="option"><input type="checkbox" name="barriers" value="Lack of awareness">Lack of awareness</label>
+  <label class="option"><input type="checkbox" name="barriers" value="No nearby centres">No nearby centres</label>
+  <label class="option"><input type="checkbox" name="barriers" value="Inconvenience">Inconvenience</label>
+  <label class="option"><input type="checkbox" name="barriers" value="No incentive">No incentive</label>
+  <label class="option"><input type="checkbox" name="barriers" value="Data privacy worries">Data privacy worries</label>
+  <label class="option"><input type="checkbox" name="barriers" value="Other">Other</label>
+  <input type="text" name="otherBarrier" placeholder="If other, please specify">
+</div>
+
+<div class="question">
+  <h3>18. Would you use a take-back or buy-back scheme?</h3>
+  <label class="option"><input type="radio" name="buyback" value="Yes">Yes</label>
+  <label class="option"><input type="radio" name="buyback" value="Maybe">Maybe</label>
+  <label class="option"><input type="radio" name="buyback" value="No">No</label>
+</div>
+
+<div class="question">
+  <h3>19. Who should be mainly responsible for e-waste management?</h3>
+  <label class="option"><input type="radio" name="responsibility" value="Government">Government</label>
+  <label class="option"><input type="radio" name="responsibility" value="Manufacturers">Manufacturers</label>
+  <label class="option"><input type="radio" name="responsibility" value="Consumers">Consumers</label>
+  <label class="option"><input type="radio" name="responsibility" value="Everyone equally">Everyone equally</label>
+</div>
+
+<div class="question">
+  <h3>20. What would encourage you to recycle more?</h3>
+  <textarea name="suggestion" rows="4" placeholder="Write your suggestions here..."></textarea>
+  <p>Optional</p>
+</div>
+
+<div class="actions">
+  <button type="submit" class="submit">Submit Survey</button>
+</div>
+
+</form>
+</div>
+
+<!-- THANK YOU PAGE -->
+<div id="thankyouPage">
+
+  <div class="thankyou">
+
+    <div class="icon">🌿</div>
+
+    <h1>Thank You!</h1>
+
+    <h3>Your response matters.</h3>
+
+    <p>
+      Thank you for taking the time to
+      participate in our survey.
+    </p>
+
+    <div class="message">
+      Every small action makes a difference.
+      Together, we can build a cleaner and
+      greener tomorrow.
+    </div>
+
+    <h2>🌍 Save Nature, Save Future</h2>
+
+    <button class="back" onclick="goBack()">
+      Return to Survey
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("surveyForm");
+
+form.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  document.getElementById("surveyPage").style.display = "none";
+
+  document.getElementById("thankyouPage").style.display = "flex";
+
+  window.scrollTo(0, 0);
+
+});
+
+function goBack() {
+
+  document.getElementById("thankyouPage").style.display = "none";
+
+  document.getElementById("surveyPage").style.display = "block";
+
+  window.scrollTo(0, 0);
+
+}
+
+</script>
+
+</body>
+</html>
